@@ -1,0 +1,10 @@
+public class ASCII castle 
+{ 
+	public static void main (String[]args)
+	{
+		System.out.println("[                     . .. . :--~.. .           ");
+		System.out.println("[                 ....NMMMMMMMMMMMMMMMM, .      ");
+		System.out.println("[               ..MMMMMMMMNDZIIIZNMMMMMMMD		");
+		System.out.println("[             .?MMMMMM7777777777777777CMMMM?.   ");
+		System.out.println("[           .MMMMMD7$77777777777777777IISMMM7   ");
+		System.out.println("[       .. .?MMMMOSSSS
