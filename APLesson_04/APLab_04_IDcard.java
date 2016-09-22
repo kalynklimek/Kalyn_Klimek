@@ -23,11 +23,11 @@ public class APLab_04_IDcard
 		kb.nextLine();
 		String line3 = kb.nextLine();
 		
-		System.out.println("***********************");
+		System.out.println("*********************************");
 		form.format(word1, line1);
 		form.format(word2, line2);
 		form.format(word3, line3);
-		System.out.println("\n*********************");
+		System.out.println("\n*********************************");
 	}
 	
 	public void format(String word, String line)
