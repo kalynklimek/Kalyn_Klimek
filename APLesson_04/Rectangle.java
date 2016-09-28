@@ -1,24 +1,29 @@
-import jav.util.Scanner;
+import java.util.Scanner;
 public class Rectangle 
 {
-	static String var1 = "Your rectangle is " + " sq ft around.";
-	static int var2;
-	static int var3;
-	static int var4;
-	public static void (main[]args)
+	static double l;
+	static double w;
+	static double perimeter;
+	
+	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
+		Rectangle rec = new Rectangle();
 		System.out.println("Please enter the length of the rectangle:");
-		var2 = kb.nextInt();
+		l = kb.nextDouble();
 		System.out.println("Please enter the width of the rectangle:");
-		var3 = kb.nextInt();
-		System.out.println("Please enter the height of the rectangle:");
-		var4 = kb.nextInt();
-		method1(); 
+		w = kb.nextDouble();
+		calcPerim();
+		print();
 	}
 	
-	public static void method1 ()
+	public static void calcPerim ()
 	{
-		System.out.println()
+		perimeter = (2*l) + (2*w);
+	}
+	
+	public static void print()
+	{
+		System.out.printf("Your rectanngle is %.5f ft around.", perimeter); 
 	}
 }
