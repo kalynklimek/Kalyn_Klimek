@@ -13,12 +13,12 @@ public class Lucky7s
 	{
 		while(num > 0)
 		{
-			while()
+			if(num%10 == 7)
 			{
 				return 1 + luck(num/10);
 			}
 			return 0 + luck(num/10);
 		}
-		return 0
+		return 0;
 	}
 }

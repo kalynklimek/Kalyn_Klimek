@@ -4,8 +4,11 @@ public class Center
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		System.out.println("Please enter a sentence with three words:");
+		System.out.println("Please enter three words:");
 		System.out.println(makeCenter(kb.next()));
+		System.out.println(makeCenter(kb.next()));
+		System.out.println(makeCenter(kb.next()));
+		
 	}
 	
 	public static String makeCenter(String word)
@@ -14,6 +17,6 @@ public class Center
 		{
 			return word;
 		}
-		return word + makeCenter(" " + word + " ");
+		return makeCenter(" " + word + " ");
 	}
 }

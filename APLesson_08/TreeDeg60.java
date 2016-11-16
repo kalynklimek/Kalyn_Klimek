@@ -5,11 +5,18 @@ public class TreeDeg60
 	{
 		Scanner kb = new Scanner(System.in);
 		System.out.println("Please enter a word:");
-		System.out.println(tree(kb.next()));	
+		String word = kb.next();
+		int stop = word.length();
+		tree(word, 0, stop);	
 	}
 	
-	public static string tree(String word)
+	public static String tree(String word, int start, int stop)
 	{
-		while()
+		while(start <= stop)
+		{
+			System.out.printf("%15s\n", word.substring(0, start));
+			return tree(word, start + 1, stop);
+		}
+		return "";
 	}
 }
