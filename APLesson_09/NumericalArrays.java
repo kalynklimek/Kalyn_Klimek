@@ -14,7 +14,7 @@ public class NumericalArrays
 			System.out.println(num);
 		
 		System.out.println();
-		System.out.println("The sum of the number above is..."  + sumArray(numbers));
+		System.out.println("The sum of the number above is... "  + sumArray(numbers));
 	}
 
 	public static int sumArray(int[] n)
