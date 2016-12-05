@@ -13,5 +13,6 @@ public class FibonacciSequence
 		{
 			seq[i] = num
 		}
+		System.out.println(seq[i] + " ");
 	}
 }
