@@ -6,6 +6,14 @@ public class User
 	private String avatar;
 	private int userID;
 	
+	public User()
+	{
+		firstName = "";
+		lastName = "";
+		avatar = "";
+		userID = 0;
+	}
+	
 	public User(String fN, String lN)
 	{
 		firstName = fN;
@@ -22,21 +30,16 @@ public class User
 		userID = (int)(Math.random()*1000000) + 1;
 	}
 	
+	public void getAv(String av)
+	{
+		avatar = av;
+	}
+	
 	public String toString()
 	{
 		return "Customer Info...\nFirst Name: " + firstName +
 								"\nLast Name: " + lastName +
 								"\nAvatar: " + avatar +
 								"\nUser ID#: " + userID;
-	}
-	
-	Scanner kb = new Scanner(System.in);
-	public static void main(String[]args)
-	{
-		User pH = new User("Professor", "Handsome");
-		System.out.println(pH);
-		System.out.println();
-		User pH2 = new User("Professor", "Handsome", "profHansizzle");
-		System.out.println(pH2);
 	}
 }
