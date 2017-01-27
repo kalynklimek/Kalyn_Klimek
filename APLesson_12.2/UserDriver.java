@@ -1,17 +1,29 @@
 import java.util.Scanner;
-public UserDriver
+public class UserDriver
 {
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		User pH = new User("Professor", "Handsome");
-		System.out.println(pH);
-		System.out.println();
-		User pH2 = new User("Professor", "Handsome", "profHansizzle");
-		System.out.println(pH2);
+		System.out.println("Please enter your first name:");
+		String firstname = kb.next();
+		System.out.println("Please enter your last name:");
+		String lastname = kb.next();
+		User user1;
 		
-		System.out.println("Enter your username:");
+		System.out.println("Would you like to use a public avatar? (y or n)");
+		String choice = kb.next();
 		
-		user1 object = new user1()
+		if(choice.equals("n"))
+		{
+			user1 = new User(firstname, lastname);
+		}
+		if(choice.equals("y"))
+		{
+			System.out.println("Enter avatar:");
+			String avatar = kb.next();
+			user1= new User(firstname, lastname, avatar);
+		}
+		
+		System.out.println(User);
 	}
 }
