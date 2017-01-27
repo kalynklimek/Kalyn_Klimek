@@ -24,6 +24,6 @@ public class UserDriver
 			user1= new User(firstname, lastname, avatar);
 		}
 		
-		System.out.println(User);
+		System.out.println(user1);
 	}
 }
