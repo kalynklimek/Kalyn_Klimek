@@ -1,10 +1,12 @@
-import java.util.ArrayList;
-import java.util.Scanner;
 public class ToyRunner
 {
 	public static void main(String[]args)
 	{
-		ArrayList<Toy> inventory = new ArrayList<Toy>();
+		Car car = new Car("Toyota");
+		AFigure afigure = new AFigure("Super man"); 
 		
+		System.out.println("Toy Info");
+		System.out.println("Car: " + car.getCount() + " " + car.getName());
+		System.out.println("Action Figure: " + afigure.getCount() + " " + afigure.getName());
 	}
 }

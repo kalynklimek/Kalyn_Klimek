@@ -5,9 +5,9 @@ public class AFigure extends Toy
 		super();
 	}
 	
-	public AFigure(String a, String n)
+	public AFigure(String n)
 	{
-		super(n, c);
+		super(n);
 	}
 	
 	public String getType()

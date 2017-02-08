@@ -5,9 +5,9 @@ public class Car extends Toy
 		super();
 	}
 	
-	public Car(String x, String n)
+	public Car(String n)
 	{
-		super(n, c);
+		super(n);
 	}
 	
 	public String getType()

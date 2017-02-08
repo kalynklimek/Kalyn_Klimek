@@ -1,4 +1,4 @@
-public class Toy
+public abstract class Toy
 {
 	private String name;
 	private int count;
@@ -17,7 +17,7 @@ public class Toy
 	}
 	
 	//Abstract Method
-	public abstrict String getType();
+	public abstract String getType();
 	
 	//Modifier
 	public void setName(String n)
