@@ -14,9 +14,4 @@ public class XBox extends Console
 	{
 		return "XBox Wireless Controller";
 	}
-	
-	public String getPlatform()
-	{
-		return "Xbox";
-	}
 }

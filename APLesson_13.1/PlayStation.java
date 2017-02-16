@@ -14,9 +14,4 @@ public class PlayStation extends Console
 	{
 		return "PS DualShock 3";
 	}
-	
-	public String getPlatform()
-	{
-		return "PlayStation";
-	}
 }

@@ -1,4 +1,4 @@
-public class GameSystem
+public abstract class GameSystem
 {
 	private String platform;
 	private int serialNo;
@@ -23,5 +23,10 @@ public class GameSystem
 	public int getSerialNo()
 	{
 		return serialNo;
+	}
+	
+	public String toString()
+	{
+		return "Platform: " + platform + "\nSerial #: " + serialNo; 
 	}
 }

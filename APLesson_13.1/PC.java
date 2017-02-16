@@ -6,20 +6,16 @@ public class PC extends GameSystem
 	public PC()
 	{
 		super();
-		this.keyboard = "";
-		this.mouse = "";
 	}
 	
 	public PC(String p)
 	{
 		super(p);
-		this.keyboard = kb;
-		this.mouse = m;
 	}
 	
 	public String systemInput()
 	{
-		return keyboard + mouse;
+		return "keyboard and mouse";
 	}
 	
 	public String toString()
