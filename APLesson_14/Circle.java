@@ -19,6 +19,6 @@ public class Circle implements CutShapes
 	
 	public double getArea()
 	{
-		return Math.PI * (Math.pow(radius, 2));
+		return pi * Math.pow(radius, 2);
 	}
 }
