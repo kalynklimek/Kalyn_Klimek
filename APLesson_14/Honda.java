@@ -1,9 +1,25 @@
-public class Honda extends Toyota
+public class Honda implements Location
 {
-	public double getID()
+	private double [] location;
+	
+	public Honda(double[] loc)
 	{
-		return Math.random()*1000000+1;
+		location = loc;
 	}
 	
-	public 
+	public double getID()
+	{
+		return Math.random()*1000000 + 1;
+	}
+	
+	public void move(double x, double y)
+	{
+		location [0] += x;
+		location [1] += y;
+	}
+	
+	public double[] getLoc()
+	{
+		return location;
+	}
 }

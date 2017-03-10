@@ -13,14 +13,14 @@ public class GMC implements Location
 		return Math.random()*1000000 + 1;
 	}
 	
-	public double move(double x, double y)
+	public void move(double x, double y)
 	{
-		return x+x;
-		return y+y;
+		coordinates [0] += x;
+		coordinates [1] += y;
 	}
 	
-	public double getLoc(double x, double y)
+	public double[] getLoc()
 	{
-		coordinates = new double [2];
+		return coordinates;
 	}
 }
