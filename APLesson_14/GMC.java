@@ -8,9 +8,9 @@ public class GMC implements Location
 		coordinates [1] = y;
 	}
 	
-	public double getID()
+	public int getID()
 	{
-		return Math.random()*1000000 + 1;
+		return (int)(Math.random()*1000000)+1;
 	}
 	
 	public void move(double x, double y)

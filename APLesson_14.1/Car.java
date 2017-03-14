@@ -1,15 +1,17 @@
-public class Honda implements Location
+public class Car
 {
-	private double [] location;
+	private double[] location;
+	public final int ID;
 	
-	public Honda(double[] loc)
+	public Car()
 	{
-		location = loc;
+		location = new double[2];
+		ID = (int)(Math.random()*1000000)+1;;
 	}
 	
 	public int getID()
 	{
-		return (int)(Math.random()*1000000) + 1;
+		return ID;
 	}
 	
 	public void move(double x, double y)
