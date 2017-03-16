@@ -1,6 +1,6 @@
-public class Car
+public class Car implements Location
 {
-	private double[] location;
+	public double[] location;
 	public final int ID;
 	
 	public Car()
