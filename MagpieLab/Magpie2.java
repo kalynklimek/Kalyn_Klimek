@@ -17,6 +17,10 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
+		if (statement.length() == 0)
+		{
+			response = "Say something, please.";
+		}
 
 		/** Exercise_01:
 		 * ==================================================
@@ -29,19 +33,31 @@ public class Magpie2
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		if (statement.indexOf("no") >= 0)
+		if (statement.findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
 		}
 
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (statement.findKeyword(statement, "mother") >= 0
+				|| statement.findKeyword(statement, "father") >= 0
+				|| statement.findKeyword(statement, "sister") >= 0
+				|| statement.findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
 		}
-
+		
+		else if (statement.findKeyword(statement, "cat") >= 0
+				|| statement.findKeyword(statement, "dog") >= 0
+				|| statement.findKeyword(statement, "fish") >= 0
+				|| statement.findKeyword(statement, "turtle") >= 0)
+		{
+			response = "Tell me more about your pet.";
+		}
+		
+		else if (statement.findKeyword(statement, "Robinette") >= 0
+		{
+			response = "He sounds like a pretty dank teacher";
+		}
 		/** Exercise_03(Final)
 		 * ==================================================
 		 * Create additional code (another else if) that
