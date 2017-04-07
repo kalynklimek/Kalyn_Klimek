@@ -6,7 +6,7 @@ public class Magpie2
 		return "Hello, let's talk.";
 	}
 	
-	public String getResponse()
+	public String getResponse();
 	
 	
 	/** getResponse() method
@@ -54,7 +54,7 @@ public class Magpie2
 			response = "Tell me more about your pet.";
 		}
 		
-		else if (statement.findKeyword(statement, "Robinette") >= 0
+		else if (statement.findKeyword(statement, "Robinette") >= 0)
 		{
 			response = "He sounds like a pretty dank teacher";
 		}
@@ -80,9 +80,32 @@ public class Magpie2
 	 * ========================================================= */
 	private int findKeyword(String statement, String goal, int startPos)
 	{
+		String phrase = statement.trim().toLowerCase();
+		goal = goal.trim().toLowerCase();
+		int psn = String.idexOf(String goal, int startPos);
+		String before = "";
+		String after = ""
+		while(int psn >= 0)
+		{
+			if(psn > 0)
+			{
+				before = phrase.substring(psn-1, psn);
+			}
+			if(psn + goal.length() < phrase.length())
+			{
+				after = phrase.substring(psn + goal.length(), psn + goal.length() + 1);
+			}
+			
+			if((before.compareTo("a") < 0 || before.compareTo("z") > 0)
+				(after.compareTo("a") < 0 || after.compareTo("z") > 0))
+			{
+				return psn;
+			}
+			psn = String.indexOf(String goal, int psn + 1);
+		
+		
 		/* New String variable phrase = a more searchable version of statement.
 		 	-Use a combination of trim() and toLowerCase() modify statement.
-
 		   New int variable psn = the location of goal in phrase after
 		   startPos
 
