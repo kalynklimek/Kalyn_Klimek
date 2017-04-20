@@ -98,6 +98,14 @@ public class Magpie2
 	*/
 	private String transformIWantToStatement(String statement)
 	{
+		String response = "";
+		String phrase = statement.trim();
+		if(findKeyword(statement, "I want to") >= 0)
+		{
+			String restOfStatement = phrase.substring(10, 20);
+			response = "What would it mean to" + restOfStatement;
+		}
+		return response;
 	/**
 	* trim the statement
 	* variable lastChar = last character in statement
@@ -121,6 +129,12 @@ public class Magpie2
 	*/
 	private String transformYouMeStatement(String statement)
 	{
+		String response = "";
+		String phrase = statement.trim();
+		if(findKeyword(statement, "you") >= 0)
+		{
+			int psnOfYou = 
+		}
 	/**
 	* trim the statement
 	* Set new String lastChar to the last character in statement
