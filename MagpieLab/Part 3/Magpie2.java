@@ -61,8 +61,6 @@ public class Magpie2
 		{
 		  response = transformIWantToStatement(statement);
 		}
-
-
 		else
 		{
 		  // Look for a two word (you <something> me)
@@ -73,16 +71,18 @@ public class Magpie2
 		  {
 			 response = transformYouMeStatement(statement);
 		  }
-		  
-		  // psn = findKeyword(statement, "I", 0) >= 0);
-		  // else if(psn >= 0 && findKeyword(statement, "you", psn) >= 0)
-		  // {
-			  // response = transformIYouStatement(statement);
-		  // }
-		  
 		  else
 		  {
-			 response = getRandomResponse();
+			  psn = findKeyword(statement, "I", 0);
+			  if(psn >= 0 && findKeyword(statement, "you", psn) >= 0)
+			  {
+				 response = transformIYouStatement(statement);
+			  }
+			  
+			  else
+			  {
+				 response = getRandomResponse();
+			  }
 		  }
 		}
 		return response;
@@ -137,6 +137,20 @@ public class Magpie2
 	* @param statement the user statement, assumed to contain "you" followed by "me"
 	* @return the transformed statement
 	*/
+	private String transformIYouStatement(String statement)
+	{
+		String response = "";
+		String phrase = statement.trim();
+		if(findKeyword(statement, "I") >= 0)
+		{
+			int psnOfI = findKeyword(statement, "I", 0);
+			int psnOfYou = findKeyword(statement, "you", psnOfI +1);
+			String restOfStatement = phrase.substring(psnOfI +1, psnOfYou);
+			response = "Why do you" + restOfStatement + "me?";
+		}
+		return response;
+	}
+	
 	private String transformYouMeStatement(String statement)
 	{
 		String response = "";
