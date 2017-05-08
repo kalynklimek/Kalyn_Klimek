@@ -34,10 +34,19 @@ public class PictureTester
     /** Method to test testmirrorHorizontal */
   public static void testmirrorHorizontal()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
-    caterpillar.explore();
-    caterpillar.mirrorHorizontal();
-    caterpillar.explore();
+    Picture mountains = new Picture("mountains.jpg");
+    mountains.explore();
+    mountains.mirrorHorizontal();
+    mountains.explore();
+  }
+  
+  // Method to test testmirrorHorizontalBotToTop 
+  public static void testmirrorHorizontalBotToTop()
+  {
+	Picture mountains = new Picture("mountains.jpg");
+	mountains.explore();
+	mountains.mirrorHorizontalBotToTop();
+	mountains.explore();
   }
   
   public static void testMirrorVerticalRightToLeft()
@@ -55,6 +64,14 @@ public class PictureTester
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
+  }
+  
+  public static void testMirrorArms()
+  {
+	Picture snowman = new Picture("snowman.jpg");
+	snowman.explore();
+	snowman.mirrorArms();
+	snowman.explore();
   }
   
   /** Method to test the collage method */
@@ -80,7 +97,7 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
 	//testKeepOnlyBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
@@ -90,9 +107,10 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
 	//testMirrorVerticalRightToLeft();
-	testmirrorHorizontal();
+	//testmirrorHorizontal();
+	//testmirrorHorizontalBotToTop();
     //testMirrorTemple();
-    //testMirrorArms();
+    testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();

@@ -141,13 +141,30 @@ public class Picture extends SimplePicture
     Pixel topPixel = null;
     Pixel botPixel = null;
     int height = pixels.length;
-    for (int row = 0; row > height/2; row++)
+    for (int row = 0; row < height/2; row++)
     {
       for (int col = 0; col < pixels[0].length; col++)
       {
         topPixel = pixels[row][col];
         botPixel = pixels[height - 1 - row][col];
         botPixel.setColor(topPixel.getColor());
+      }
+    } 
+  }
+  
+  public void mirrorHorizontalBotToTop()
+  {
+	Pixel[][] pixels = this.getPixels2D();
+    Pixel topPixel = null;
+    Pixel botPixel = null;
+    int height = pixels.length;
+    for (int row = 0; row < height/2; row++)
+    {
+      for (int col = 0; col < pixels[0].length; col++)
+      {
+        topPixel = pixels[row][col];
+        botPixel = pixels[height - 1 - row][col];
+        topPixel.setColor(botPixel.getColor());
       }
     } 
   }
@@ -174,6 +191,25 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  
+  public void mirrorArms()
+  {
+	int mirrorPoint = 194;
+	Pixel topPixel = null;
+	Pixel botPixel = null;
+	int count = 0;
+	Pixel[][] pixels = this.getPixels2D();
+	
+	for (int row = 158; row < mirrorPoint; row ++)
+	{
+		for (int col = 102; col < 295; col++)
+		{
+			topPixel = pixels[row][col];
+			botPixel = pixels [(mirrorPoint - row) + mirrorPoint][col];
+			botPixel.setColor(topPixel.getColor());
+		}
+	}
   }
   
   /** copy from the passed fromPic to the
