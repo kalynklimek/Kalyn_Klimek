@@ -261,7 +261,28 @@ public class Picture extends SimplePicture
       }
     }   
   }
-
+  public void copy(Picture fromPic, int fsr, int fsc, int fer, int fec, int tr, int tc)
+  {
+    Pixel fromPixel = null;
+    Pixel toPixel = null;
+    Pixel[][] toPixels = this.getPixels2D();
+    Pixel[][] fromPixels = fromPic.getPixels2D();
+    for (int fromRow = fsr, toRow = tr; 
+         fromRow < fer &&
+         toRow < toPixels.length; 
+         fromRow++, toRow++)
+    {
+      for (int fromCol = fsc, toCol = tc; 
+           fromCol < fec &&
+           toCol < toPixels[0].length;  
+           fromCol++, toCol++)
+      {
+        fromPixel = fromPixels[fromRow][fromCol];
+        toPixel = toPixels[toRow][toCol];
+        toPixel.setColor(fromPixel.getColor());
+      }
+    }   
+  }
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
@@ -277,6 +298,14 @@ public class Picture extends SimplePicture
     this.copy(flower2,500,0);
     this.mirrorVertical();
     this.write("collage.jpg");
+  }
+  
+  public void myCollage()
+  {
+	Picture mountains = new Picture("mountains.jpg");
+	this.copy(mountains, 219, 416, 299, 502, 0, 0);
+	this.mirrorVertical();
+	this.write("collage.jpg");
   }
   
   
@@ -306,6 +335,27 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
+  }
+  
+  public void edgeDetection2(int edgeDist)
+  {
+	Pixel topPixel = null;
+    Pixel bottomPixel = null;
+	Pixel[][] pixels = this.getPixels2D();
+	Color bottomColor = null;
+	for (int row = 0; row < pixels.length; row++)
+	{
+		for (int col = 0; col < pixels[0].length-1; col++)
+		{
+			topPixel = pixels[row][col];
+			bottomPixel = pixels[row+1][col];
+			bottomColor = bottomPixel.getColor();
+			if (topPixel.colorDistance(bottomColor) > edgeDist)
+				topPixel.setColor(Color.BLACK);
+			else
+				topPixel.setColor(Color.WHITE);
+		}
+	}
   }
   
   
