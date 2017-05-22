@@ -90,11 +90,19 @@ public class PictureTester
     canvas.explore();
   }
   
+<<<<<<< HEAD
   public static void testCopy()
   {
 	Picture water = new Picture("water.jpg");
 	water.createCopy();
 	water.explore();
+=======
+  public static void testMyCollage()
+  {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
+>>>>>>> origin/master
   }
   
   /** Method to test edgeDetection */
@@ -102,6 +110,13 @@ public class PictureTester
   {
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(10);
+    swan.explore();
+  }
+  
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.edgeDetection2(10);
     swan.explore();
   }
   
@@ -128,10 +143,17 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
+<<<<<<< HEAD
     //testCollage();
     //testCopy();
     testEdgeDetection();
     //testEdgeDetection2();
+=======
+    //testMyCollage();
+    //testCopy();
+    //testEdgeDetection();
+    testEdgeDetection2();
+>>>>>>> origin/master
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
