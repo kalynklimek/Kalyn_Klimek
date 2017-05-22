@@ -90,6 +90,13 @@ public class PictureTester
     canvas.explore();
   }
   
+  public static void testCopy()
+  {
+	Picture water = new Picture("water.jpg");
+	water.createCopy();
+	water.explore();
+  }
+  
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
@@ -121,9 +128,9 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testCollage();
+    //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();

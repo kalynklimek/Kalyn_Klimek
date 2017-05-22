@@ -279,6 +279,15 @@ public class Picture extends SimplePicture
     this.write("collage.jpg");
   }
   
+  public void createCopy()
+  {
+	Picture swan = new Picture("swan.jpg");
+	this.copy(swan,0,50);
+	this.copy(swan,100,50);
+	this.mirrorVertical();
+	this.write("water.jpg");
+  }
+  
   
   
   
@@ -289,8 +298,11 @@ public class Picture extends SimplePicture
   {
     Pixel leftPixel = null;
     Pixel rightPixel = null;
+	Pixel topPixel = null;
+	Pixel bottomPixel = null;
     Pixel[][] pixels = this.getPixels2D();
     Color rightColor = null;
+	Color bottomColor = null;
     for (int row = 0; row < pixels.length; row++)
     {
       for (int col = 0; 
@@ -298,10 +310,14 @@ public class Picture extends SimplePicture
       {
         leftPixel = pixels[row][col];
         rightPixel = pixels[row][col+1];
+		topPixel = pixels[row][col];
+		bottomPixel = pixels[row][col+1];
         rightColor = rightPixel.getColor();
-        if (leftPixel.colorDistance(rightColor) > 
-            edgeDist)
+		bottomColor = bottomPixel.getColor();
+        if (leftPixel.colorDistance(rightColor) > edgeDist)
           leftPixel.setColor(Color.BLACK);
+		if (topPixel.colorDistance(bottomPixel) > edgeDist)
+			topPixel.setColor(Color.BLACK);
         else
           leftPixel.setColor(Color.WHITE);
       }
